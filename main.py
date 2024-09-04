@@ -53,7 +53,7 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins
+    allow_origins=["http://localhost:5173/","https://emotion-sense.netlify.app/"],  # Allow all origins
     allow_credentials=True,
     allow_methods=["*"],  # Allow all methods (GET, POST, etc.)
     allow_headers=["*"],  # Allow all headers
@@ -108,5 +108,5 @@ async def predict(request: PredictRequest):
     text = nlp_preprocessing(data)
     text = tokenizer.texts_to_sequences([text])
     text = pad_sequences(text, maxlen=261, padding='post')
-    # prediction = np.argmax(model.predict([text]))
-    return {"prediction": int(0)}
+    prediction = np.argmax(model.predict([text]))
+    return {"prediction": int(prediction)}
