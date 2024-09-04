@@ -19,15 +19,15 @@ def download_file_from_google_drive(file_id, output_path):
 
 
 # Example usage:
-# download_file_from_google_drive('1qWkyNQXhcwlE-enuY0suIvsOy-5oRIkQ', './COVID_NLP5.keras')
-# download_file_from_google_drive('12_AgHa0hiIPLeWQy51yovk8hpN6xzlo5', './tokenizer5.joblib')
-#
-# output = 'nltk_data.zip'
-# download_file_from_google_drive('1t5t1bL2EJr1vEY0nMs0x1l50tFZSUXLP', output)
-#
-# # Extract the zip file
-# with zipfile.ZipFile(output, 'r') as zip_ref:
-#     zip_ref.extractall()  # Extract to current directory
+download_file_from_google_drive('1qWkyNQXhcwlE-enuY0suIvsOy-5oRIkQ', './COVID_NLP5.keras')
+download_file_from_google_drive('12_AgHa0hiIPLeWQy51yovk8hpN6xzlo5', './tokenizer5.joblib')
+
+output = 'nltk_data.zip'
+download_file_from_google_drive('1t5t1bL2EJr1vEY0nMs0x1l50tFZSUXLP', output)
+
+# Extract the zip file
+with zipfile.ZipFile(output, 'r') as zip_ref:
+    zip_ref.extractall()  # Extract to current directory
 
 
 # Define the directory where NLTK data will be stored
