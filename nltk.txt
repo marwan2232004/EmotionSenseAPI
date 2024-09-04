@@ -1,0 +1,4 @@
+punkt
+stopwords
+wordnet
+punkt_tab
