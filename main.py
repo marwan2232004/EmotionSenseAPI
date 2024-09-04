@@ -9,8 +9,29 @@ import io
 import re
 import nltk
 import os
+import gdown
+import zipfile
+
+
+def download_file_from_google_drive(file_id, output_path):
+    url = f'https://drive.google.com/uc?id={file_id}'
+    gdown.download(url, output_path, quiet=False)
+
+
+# Example usage:
+download_file_from_google_drive('1qWkyNQXhcwlE-enuY0suIvsOy-5oRIkQ', './COVID_NLP5.keras')
+download_file_from_google_drive('12_AgHa0hiIPLeWQy51yovk8hpN6xzlo5', './tokenizer5.joblib')
+
+output = 'nltk_data.zip'
+download_file_from_google_drive('1t5t1bL2EJr1vEY0nMs0x1l50tFZSUXLP', output)
+
+# Extract the zip file
+with zipfile.ZipFile(output, 'r') as zip_ref:
+    zip_ref.extractall()  # Extract to current directory
+
 
 # Define the directory where NLTK data will be stored
+
 nltk_data_dir = os.path.join(os.path.dirname(__file__), "nltk_data")
 
 # Add this directory to NLTK's data path
@@ -43,8 +64,8 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
-model = tf.keras.models.load_model('models/COVID_NLP5.keras')
-tokenizer = joblib.load('models/tokenizer5.joblib')
+model = tf.keras.models.load_model('./COVID_NLP5.keras')
+tokenizer = joblib.load('./tokenizer5.joblib')
 
 
 def nlp_preprocessing(tweet):
