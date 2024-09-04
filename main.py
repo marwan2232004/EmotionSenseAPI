@@ -103,10 +103,10 @@ class PredictRequest(BaseModel):
 
 
 @app.post("/predict")
-def predict(request: PredictRequest):
+async def predict(request: PredictRequest):
     data = request.text
     text = nlp_preprocessing(data)
     text = tokenizer.texts_to_sequences([text])
     text = pad_sequences(text, maxlen=261, padding='post')
-    prediction = np.argmax(model.predict([text]))
-    return {"prediction": int(prediction)}
+    # prediction = np.argmax(model.predict([text]))
+    return {"prediction": int(0)}
