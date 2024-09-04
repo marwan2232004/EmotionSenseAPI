@@ -17,10 +17,10 @@ nltk_data_dir = os.path.join(os.path.dirname(__file__), "nltk_data")
 nltk.data.path.append(nltk_data_dir)
 
 # # Download required NLTK datasets into the specified directory
-# nltk.download('punkt', download_dir=nltk_data_dir)
-# nltk.download('stopwords', download_dir=nltk_data_dir)
-# nltk.download('wordnet', download_dir=nltk_data_dir)
-# nltk.download('punkt_tab', download_dir=nltk_data_dir)
+nltk.download('punkt', download_dir=nltk_data_dir)
+nltk.download('stopwords', download_dir=nltk_data_dir)
+nltk.download('wordnet', download_dir=nltk_data_dir)
+nltk.download('punkt_tab', download_dir=nltk_data_dir)
 
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
