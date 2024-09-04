@@ -26,5 +26,3 @@ dist/
 # OS specific
 .DS_Store
 Thumbs.db
-
-nltk_data/
