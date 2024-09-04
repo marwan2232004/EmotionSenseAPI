@@ -37,11 +37,6 @@ nltk_data_dir = os.path.join(os.path.dirname(__file__), "nltk_data")
 # Add this directory to NLTK's data path
 nltk.data.path.append(nltk_data_dir)
 
-# # Download required NLTK datasets into the specified directory
-# nltk.download('punkt', download_dir=nltk_data_dir)
-# nltk.download('stopwords', download_dir=nltk_data_dir)
-# nltk.download('wordnet', download_dir=nltk_data_dir)
-# nltk.download('punkt_tab', download_dir=nltk_data_dir)
 
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -111,7 +106,7 @@ def predict(request: PredictRequest):
     data = request.text
     print(data)
     text = nlp_preprocessing(data)
-    text = tokenizer.texts_to_sequences([text])
-    text = pad_sequences(text, maxlen=261, padding='post')
-    prediction = np.argmax(model.predict([text]))
-    return {"prediction": int(prediction)}
+    # text = tokenizer.texts_to_sequences([text])
+    # text = pad_sequences(text, maxlen=261, padding='post')
+    # prediction = np.argmax(model.predict([text]))
+    return {"prediction": text}
