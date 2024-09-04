@@ -106,7 +106,7 @@ def predict(request: PredictRequest):
     data = request.text
     print(data)
     text = nlp_preprocessing(data)
-    # text = tokenizer.texts_to_sequences([text])
-    # text = pad_sequences(text, maxlen=261, padding='post')
+    text = tokenizer.texts_to_sequences([text])
+    text = pad_sequences(text, maxlen=261, padding='post')
     # prediction = np.argmax(model.predict([text]))
     return {"prediction": text}
