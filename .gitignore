@@ -1,0 +1,28 @@
+# Python specific
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+.env
+venv/
+.venv/
+.mypy_cache/
+.pytest_cache/
+.tox/
+.coverage
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# IDE specific
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS specific
+.DS_Store
+Thumbs.db
