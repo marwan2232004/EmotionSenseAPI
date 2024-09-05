@@ -22,12 +22,12 @@ def download_file_from_google_drive(file_id, output_path):
 download_file_from_google_drive('1qWkyNQXhcwlE-enuY0suIvsOy-5oRIkQ', './COVID_NLP5.keras')
 download_file_from_google_drive('12_AgHa0hiIPLeWQy51yovk8hpN6xzlo5', './tokenizer5.joblib')
 
-output = 'nltk_data.zip'
-download_file_from_google_drive('1t5t1bL2EJr1vEY0nMs0x1l50tFZSUXLP', output)
+# output = 'nltk_data.zip'
+# download_file_from_google_drive('1t5t1bL2EJr1vEY0nMs0x1l50tFZSUXLP', output)
 
-# Extract the zip file
-with zipfile.ZipFile(output, 'r') as zip_ref:
-    zip_ref.extractall()  # Extract to current directory
+# # Extract the zip file
+# with zipfile.ZipFile(output, 'r') as zip_ref:
+#     zip_ref.extractall()  # Extract to current directory
 
 
 # Define the directory where NLTK data will be stored
@@ -36,6 +36,11 @@ nltk_data_dir = os.path.join(os.path.dirname(__file__), "nltk_data")
 
 # Add this directory to NLTK's data path
 nltk.data.path.append(nltk_data_dir)
+
+nltk.download('punkt') # At first you have to download these nltk packages.
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('punkt_tab')
 
 
 from nltk.corpus import stopwords
