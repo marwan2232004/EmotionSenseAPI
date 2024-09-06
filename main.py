@@ -37,10 +37,10 @@ nltk_data_dir = os.path.join(os.path.dirname(__file__), "nltk_data")
 # Add this directory to NLTK's data path
 nltk.data.path.append(nltk_data_dir)
 
-nltk.download('punkt') # At first you have to download these nltk packages.
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('punkt_tab')
+nltk.download('punkt',download_dir=nltk_data_dir) # At first you have to download these nltk packages.
+nltk.download('stopwords',download_dir=nltk_data_dir)
+nltk.download('wordnet',download_dir=nltk_data_dir)
+nltk.download('punkt_tab',download_dir=nltk_data_dir)
 
 
 from nltk.corpus import stopwords
