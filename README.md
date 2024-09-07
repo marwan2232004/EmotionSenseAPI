@@ -5,5 +5,28 @@ This API is built using **FastAPI** and is designed to perform **sentiment analy
 🌐 **Live Demo**: The API is deployed on **Azure Web Services** and can be accessed at the following link:  
 [Emotion Sense API](https://emotionsense-dvemggcjagcqdxey.uaenorth-01.azurewebsites.net/)
 
-🚨 **Note**:  
-Unfortunately, I can't keep the API live indefinitely as it incurs costs 💸. If the service is down or the link isn't valid anymore, feel free to clone the repository and run it locally to explore its features!
+## POST /predict
+
+This endpoint takes in a text input and returns a sentiment prediction. The sentiment is classified as `positive`, `neutral`, or `negative` based on the analysis of the text.
+
+### Request:
+
+- **URL**: `/predict`
+- **Method**: `POST`
+- **Content-Type**: `application/json`
+- **Request Body**:
+  - The request body should contain a string of text to be analyzed for sentiment.
+
+### Response:
+
+- **Content-Type**: `application/json`
+- **Body**: A JSON object containing a `prediction` field with an integer value:
+  - `0` = neutral
+  - `1` = positive
+  - `2` = negative
+
+#### Example response:
+```json
+{
+    "prediction": 1
+}
